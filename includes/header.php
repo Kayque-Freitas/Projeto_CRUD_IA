@@ -28,6 +28,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="produtos_listar.php">Produtos</a>
                 </li>
+                <?php if ($_SESSION['user_perfil'] === 'ADMIN'): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="usuarios_listar.php">Usuários</a>
+                </li>
+                <?php
+    endif; ?>
             </ul>
             <span class="navbar-text me-3 text-light">
                 Olá, <strong><?php echo htmlspecialchars($_SESSION['user_nome']); ?></strong> 
@@ -37,21 +43,22 @@
         </div>
     </div>
 </nav>
-<?php endif; ?>
+<?php
+endif; ?>
 
 <main class="container">
     <!-- Exibição de Mensagens Globais de Sucesso ou Erro -->
     <?php
-    if (isset($_SESSION['sucesso'])) {
-        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
-        echo htmlspecialchars($_SESSION['sucesso']);
-        echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
-        unset($_SESSION['sucesso']);
-    }
-    if (isset($_SESSION['erro'])) {
-        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
-        echo htmlspecialchars($_SESSION['erro']);
-        echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
-        unset($_SESSION['erro']);
-    }
-    ?>
+if (isset($_SESSION['sucesso'])) {
+    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
+    echo htmlspecialchars($_SESSION['sucesso']);
+    echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+    unset($_SESSION['sucesso']);
+}
+if (isset($_SESSION['erro'])) {
+    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
+    echo htmlspecialchars($_SESSION['erro']);
+    echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+    unset($_SESSION['erro']);
+}
+?>
