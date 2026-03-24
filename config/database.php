@@ -1,9 +1,9 @@
 <?php
 // Configurações Banco de Dados
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'crud_php_pdo');
+define('DB_HOST', 'sql113.infinityfree.com');
+define('DB_USER', 'if0_41325687');
+define('DB_PASS', 'Au1VtoYbja918y3');
+define('DB_NAME', 'if0_41325687_crud_php_pdo');
 
 try {
     $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USER, DB_PASS);
