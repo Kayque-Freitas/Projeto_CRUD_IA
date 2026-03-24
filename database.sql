@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS crud_php_pdo CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE crud_php_pdo;
+-- Script para as tabelas do projeto
+-- Nota: No InfinityFree, crie o banco manualmente no painel e então importe este arquivo.
 
 CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
